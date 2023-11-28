@@ -1,55 +1,67 @@
 #include<stdio.h>
 #include<stdlib.h>
-int amountArr(int a){
-	int amount=0;
+int integer(int a){
 	if(a==2||a==3||a==5){		
 		printf("%d\t",a);
-		amount++;
-	}else if(a!=1&&(a%2!=0&&a%3!=0&&a%5!=0)){
+	}else if(a!=1&&a%2!=0&&a%3!=0&&a%5!=0){
 		printf("%d\t",a);
+	}
+	return 0;
+}
+int amountArr(int a, int b){
+	int amount=b;
+	if(a==2||a==3||a==5){		
+		amount++;
+	}else if(a!=1&&a%2!=0&&a%3!=0&&a%5!=0){
 		amount++;
 	}
 	return amount;
 }
-
-
 int main(){
-	int i,n;
-	int arrOne[n],arrTwo[n];
-	printf("nhap so luong phan tu cua 2 mang:");
+	int i,n,m;
+	int amountOne=0;
+	int amountTwo=0;
+	printf("nhap so luong phan tu cua mang1:");
 	scanf("%d",&n);
-
+	int arrOne[n];
 	printf("nhap gia tri phan tu cua mang 1:\n");
 	for(i=0;i<n;i++){
 		printf("arrOne[%d]=",i);
 		scanf("%d",&arrOne[i]);	
 	}
-		
+	printf("nhap so luong phan tu cua mang2:");
+	scanf("%d",&m);	
+	int arrTwo[m];
 	printf("nhap gia tri phan tu cua mang 2:\n");
-	for(i=0;i<n;i++){
+	for(i=0;i<m;i++){
 		printf("arrTwo[%d]=",i);
 		scanf("%d",&arrTwo[i]);	
 	}
 	printf("cac so nguyen to co trong mang 1:\n");
 	for(i=0;i<n;i++){
-		amountArr(arrOne[i]);
+		integer(arrOne[i]);
+		amountOne=amountArr(arrOne[i],amountOne);
 	}
-	int amountOne=amountArr(arrOne[i]);
 	
 	printf("\ncac so nguyen to co trong mang 2:\n");
-	for(i=0;i<n;i++){
-		amountArr(arrTwo[i]);
+	for(i=0;i<m;i++){
+		integer(arrTwo[i]);
+		amountTwo=amountArr(arrTwo[i],amountTwo);
 	}
-	int amountTwo=amountArr(arrTwo[i]);
 	
+
 	if(amountOne>amountTwo){
+		printf("\n");
 		for(i=0;i<n;i++){
-		printf("%d\t",arrOne[i]);
+			printf("%d\t",arrOne[i]);
 		}
 	}else if(amountOne<amountTwo){
-		printf("%d\t",arrTwo[i]);
+		printf("\n");
+		for(i=0;i<m;i++){
+			printf("%d\t",arrTwo[i]);
+		}
 	}else{
-		printf("2 mang co so luong so nguyen to bang nhau!!");
+		printf("\n2 mang co so luong so nguyen to bang nhau!!");
 	}
+	return 0;
 }
-
