@@ -42,14 +42,11 @@ int main(){
 		integer(arrOne[i]);
 		amountOne=amountArr(arrOne[i],amountOne);
 	}
-	
 	printf("\ncac so nguyen to co trong mang 2:\n");
 	for(i=0;i<m;i++){
 		integer(arrTwo[i]);
 		amountTwo=amountArr(arrTwo[i],amountTwo);
 	}
-	
-
 	if(amountOne>amountTwo){
 		printf("\n");
 		for(i=0;i<n;i++){
